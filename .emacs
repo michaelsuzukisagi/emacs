@@ -1,8 +1,9 @@
 (setq-default inhibit-startup-screen t)
-;; Of course, don't uncomment the line below -- doing so would
-;; stop Emacs from helpfully leaving "foo~" (backup) files all
-;; over the place.
-;;(setq make-backup-files nil)
+
+;; Stores Emacs buffers and backup files,"foo~" (backup), in a direcotry
+;; instead of storing it all over the place.
+(defvar backup-dir "~/.emacs.d/backups/")
+(setq backup-directory-alist (list (cons "." backup-dir)))
 
 ;; Use only spaces (no tabs at all).
 (setq-default indent-tabs-mode nil)
